@@ -11,6 +11,41 @@ namespace POO_2
         static void Main(string[] args)
         {
 
+            //polimorfismo: voce so consegue acessar os dados do PAI; nao da pra acessar o turno do aluno;
+            Usuario u = new Aluno("matutino", "Fabio", "f@hotmail.com", "senha");
+            Usuario u2 = new Zelador("Carlos", "c@hotmail.com", "senha");
+
+            //u.Exibir();
+            Console.WriteLine("---------------------");
+
+            //u2.Exibir();
+            Console.WriteLine("---------------------");
+
+            //para acessar o turno --> usar CAST (converteu VAR do tipo PAI para o tipo FILHO)
+            //Console.WriteLine(((Aluno)u).turno);
+
+
+            //polimorfismo sobrecarga
+            //u.Logar("f@hotmail.com", 1234);
+            //u.Logar(2323, 1234);
+
+
+
+            //polimorfismo sobreposição
+            u.Exibir();
+
+
+
+
+
+            Console.WriteLine("\n-----------------------------------------------------------");
+
+
+
+
+
+
+
             //utilizando via construtor da class Usuario.cs
             Aluno a = new Aluno("Matutino", "Ben", "ben@hotmail.com", "dfdf23");
 

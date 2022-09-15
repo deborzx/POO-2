@@ -22,19 +22,46 @@ namespace POO_2
             this.senha = senha;
         }
 
+        //logar void - pois nao recebe nada
         public void Logar()
         {
             //Console.WriteLine(teste);
             Console.WriteLine("\nLogando..");
         }
 
-        public void Exibir()
+
+
+        //polimorfismo de sobrecarga
+        //logar string - pois recebe string
+        public void Logar(string email, int senha)
+        {
+            //Console.WriteLine(teste);
+            Console.WriteLine("\nLogando com email+senha");
+        }
+
+
+        public void Logar(int pin, int senha)
+        {
+            //Console.WriteLine(teste);
+            Console.WriteLine("\nLogando com pin+senha");
+        }
+
+
+
+
+        //polimorfismo de sobreposição - utilizando a palavra 'virtual'
+
+        public virtual void Exibir()
         {
             Console.WriteLine($"email: {email}");
             Console.WriteLine($"nome: {nome}");
             Console.WriteLine($"senha: {senha}");
 
         }
+
+
+
+
     }
 
     //herança: aluno herda de usuario
@@ -55,6 +82,15 @@ namespace POO_2
             this.turno = turno;
         }
 
+
+        //metodo exibir com polimorfismo
+        public override void Exibir()
+        {
+            Console.WriteLine("Dados do aluno: ");
+            base.Exibir();
+            Console.WriteLine($"seu turno é: {turno}");
+        }
+
     }
 
 
@@ -62,6 +98,7 @@ namespace POO_2
     {
         public List<string> tarefas = new List<string>();
 
+        //construtor da class pai
         public Zelador(string nome, string email, string senha): base(nome, email, senha)
         {
             
