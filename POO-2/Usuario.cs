@@ -12,12 +12,20 @@ namespace POO_2
         public string nome;
         public string email;
         public string senha;
-        protected string teste;
+        //protected string teste;
+
+        //construtor gerado
+        public Usuario(string nome, string email, string senha)
+        {
+            this.nome = nome;
+            this.email = email;
+            this.senha = senha;
+        }
 
         public void Logar()
         {
-            Console.WriteLine(teste);
-            Console.WriteLine("Logando..\n");
+            //Console.WriteLine(teste);
+            Console.WriteLine("\nLogando..");
         }
 
         public void Exibir()
@@ -37,7 +45,14 @@ namespace POO_2
 
         public void Testando()
         {
-            Console.WriteLine(teste);
+           //Console.WriteLine(teste);
+        }
+
+
+        //construtor da class pai
+        public Aluno(string turno, string nome, string email, string senha): base(nome, email, senha)
+        {
+            this.turno = turno;
         }
 
     }
@@ -46,7 +61,11 @@ namespace POO_2
     class Zelador : Usuario
     {
         public List<string> tarefas = new List<string>();
-         
+
+        public Zelador(string nome, string email, string senha): base(nome, email, senha)
+        {
+            
+        }
     }
 
 
